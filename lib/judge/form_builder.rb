@@ -3,8 +3,8 @@ module Judge
   class FormBuilder < ActionView::Helpers::FormBuilder
 
     include Judge::Html
-    
-    %w{text_field text_area password_field}.each do |type|
+
+    %w{text_field text_area password_field email_field telephone_field}.each do |type|
       helper = <<-END
         def #{type}(method, options = {})
           add_validate_attr!(self.object, method, options)
